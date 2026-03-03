@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <title>{{ prof }}</title>
+    </head>
+    <body>
+        <div>
+            <h1>Миссия Колонизация Марса</h1>
+            <h8>И на Марсе будут яблони цвести!</h8>
+        </div>
+        {% if "инженер" in prof.lower() or "строитель" in prof.lower() or "механик" in prof.lower() or "конструктор" in prof.lower() %}
+            <div>
+                </br>
+                <h2>Инженерные тренажеры</h2>
+                </br>
+                <img src="/static/img/spaceship_IT.png" alt="problem">
+            </div>
+        {% elif "учёный" in prof.lower() or "врач" in prof.lower() or "доктор" in prof.lower() or "биолог" in prof.lower() %}
+            <div>
+                </br>
+                <h2>Научные симуляторы</h2>
+                </br>
+                <img src="/static/img/spaceship_NS.png" alt="problem">
+            </div>
+        {% else %}
+            </br>
+            <h2>Безработный</h2>
+            </br>
+            <img src="/static/img/spaceship.png" alt="problem">
+        {% endif %}
+    </body>
+</html>
