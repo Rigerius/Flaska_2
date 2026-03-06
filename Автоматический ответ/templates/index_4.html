@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% set s = {"title": "Анкета",
+            "surname": "Фамилия: Бакалов",
+            "name": "Имя: Михаил",
+            "education": "Образование: Общее",
+            "profession": "Профессия: Инженер-Конструктор",
+            "sex": "Пол: Мужской",
+            "motivation": "Мотивация: Отсут... Построить крутые новые механизмы на Марсе",
+            "ready": "Готовы остаться на Марсе? Нет"} %}
+    <meta charset="UTF-8">
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <link rel="stylesheet" type="text/css" href="/static/css/style_4.css" />
+        <h1>Миссия Колонизация Марса</h1>
+        <h3>И на Марсе будут яблони цвести!</h3>
+        {% for i in s %}
+            <div>
+                {% if i != "title" %}
+                    <index4>{{ s[i] }}</index4>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </body>
+</html>
