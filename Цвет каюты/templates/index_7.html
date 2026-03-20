@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1><center><h3>Оформление каюты</h3></center></h1>
+<div class="px-5 mx-5">
+    {% set headers = ["Цвет каюты", "Марсианин"] %}
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                {% for header in headers %}
+                    <th>{{header}}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>
+                {% if pol == "male" and age < 21 %}
+                    <img src="/static/img/male_1.png">
+                {% elif pol == "male" and age >= 21 %}
+                    <img src="/static/img/male_2.png">
+                {% elif pol == "female" and age < 21 %}
+                    <img src="/static/img/female_1.png">
+                {% elif pol == "female" and age >= 21 %}
+                    <img src="/static/img/female_2.png">
+                {% endif %}
+            </td>
+            <td>
+                {% if age < 21 %}
+                    <img src="/static/img/no_2.png">
+                {% elif age >= 21 %}
+                    <img src="/static/img/no_1.png">
+                {% endif %}
+            </td>
+        </tbody>
+    </table>
+</div>
+{% endblock %}
