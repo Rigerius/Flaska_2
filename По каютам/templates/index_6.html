@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1><center><h3>Размещение по каютам</h3></center></h1>
+{% for i in sp %}
+{% if loop.first %}
+<div>{{ i }} - Каюта № {{ loop.index }} - капитан корабля</div>
+{% else %}
+<div>{{ i }} - Каюта № {{ loop.index }}</div>
+{% endif %}
+{% endfor %}
+{% endblock %}
