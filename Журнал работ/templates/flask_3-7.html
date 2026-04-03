@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1><center><h2>Отображение задач</h2></center></h1>
+{% for table in tables %}
+<div class="px-5 mx-5">
+    </br>
+    <div><h3>Задача №{{ loop.index }}</h3></div>
+    {% set headers = ["Название", "Лидер", "Длительность", "Список участников", "Статус"] %}
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr class="table-secondary">
+                {% for header in headers %}
+                    <th>{{header}}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+
+        <tbody>
+        <tr class="table-primary">
+            <td>
+                {{ table[0] }}
+            </td>
+            <td>
+                {{ table[1] }}
+            </td>
+            <td>
+                {{ table[2] }} часов
+            </td>
+            <td>
+                {{ table[3] }}
+            </td>
+            <td>
+                False
+            </td>
+        </tbody>
+    </table>
+</div>
+{% endfor %}
+{% endblock %}
